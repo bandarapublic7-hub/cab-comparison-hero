@@ -30,7 +30,7 @@ const CitiesSection = () => {
             Available Across <span className="text-primary">India</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            Wherever you ride, Buyhatke has you covered.
+            Wherever you ride, Swaft X has you covered.
           </p>
         </motion.div>
 

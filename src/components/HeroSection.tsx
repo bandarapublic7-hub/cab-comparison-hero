@@ -73,7 +73,7 @@ const HeroSection = () => {
             <div className="absolute inset-0 bg-primary/10 rounded-3xl blur-3xl scale-90" />
             <img
               src={heroPhone}
-              alt="Buyhatke ride comparison app showing fare comparisons"
+              alt="Swaft X ride comparison app showing fare comparisons"
               className="relative w-72 md:w-80 lg:w-96 animate-float drop-shadow-2xl"
               loading="eager"
             />

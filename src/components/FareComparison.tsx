@@ -205,7 +205,7 @@ const FareComparison = () => {
                 <div className="text-sm">
                   <span className="text-muted-foreground">You save up to </span>
                   <span className="text-primary font-display font-bold text-lg">₹{savings}</span>
-                  <span className="text-muted-foreground"> with Buyhatke</span>
+                  <span className="text-muted-foreground"> with Swaft X</span>
                 </div>
               </motion.div>
             )}

@@ -45,7 +45,7 @@ const FeaturesSection = () => {
           className="text-center mb-16"
         >
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-            Why Riders <span className="text-primary">Love</span> Buyhatke
+            Why Riders <span className="text-primary">Love</span> Swaft X
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
             Every feature designed to save you time, money, and hassle on every ride.
