@@ -10,11 +10,11 @@ const Footer = () => {
               <MapPin className="h-4 w-4 text-primary-foreground" />
             </div>
             <span className="font-display text-lg font-bold text-foreground">
-              Buy<span className="text-primary">hatke</span>
+              Swaft <span className="text-primary">X</span>
             </span>
           </div>
           <p className="text-sm text-muted-foreground text-center">
-            © 2026 Buyhatke. Compare rides, save money. Made with ❤️ in India.
+            © 2026 Swaft X. Compare rides, save money. Made with ❤️ in India.
           </p>
           <div className="flex gap-6 text-sm text-muted-foreground">
             <a href="#" className="hover:text-foreground transition-colors">Privacy</a>

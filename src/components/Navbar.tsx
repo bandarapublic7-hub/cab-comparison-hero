@@ -17,7 +17,7 @@ const Navbar = () => {
             <MapPin className="h-5 w-5 text-primary-foreground" />
           </div>
           <span className="font-display text-xl font-bold text-foreground">
-            Buy<span className="text-primary">hatke</span>
+            Swaft <span className="text-primary">X</span>
           </span>
         </div>
 

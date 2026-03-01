@@ -24,7 +24,7 @@ const CtaSection = () => {
           </h2>
 
           <p className="text-lg text-muted-foreground max-w-lg mx-auto">
-            Join lakhs of smart riders across India. Download Buyhatke and never overpay for a ride again.
+            Join lakhs of smart riders across India. Download Swaft X and never overpay for a ride again.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
