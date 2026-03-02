@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { MapPin, Menu } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const Navbar = () => {
@@ -24,7 +25,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
           <a href="#compare" className="hover:text-foreground transition-colors">Compare Fares</a>
           <a href="#features" className="hover:text-foreground transition-colors">Features</a>
-          <a href="#cities" className="hover:text-foreground transition-colors">Cities</a>
+          <Link to="/about" className="hover:text-foreground transition-colors">About</Link>
           <a href="#download" className="px-5 py-2.5 rounded-full bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity">
             Get App
           </a>
@@ -43,7 +44,7 @@ const Navbar = () => {
         >
           <a href="#compare" className="text-muted-foreground hover:text-foreground">Compare Fares</a>
           <a href="#features" className="text-muted-foreground hover:text-foreground">Features</a>
-          <a href="#cities" className="text-muted-foreground hover:text-foreground">Cities</a>
+          <Link to="/about" className="text-muted-foreground hover:text-foreground">About</Link>
           <a href="#download" className="px-5 py-2.5 rounded-full bg-primary text-primary-foreground font-semibold text-center">
             Get App
           </a>

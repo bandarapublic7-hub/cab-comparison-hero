@@ -1,4 +1,5 @@
 import { MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -14,12 +15,12 @@ const Footer = () => {
             </span>
           </div>
           <p className="text-sm text-muted-foreground text-center">
-            © 2026 Swaft X. Compare rides, save money. Made with ❤️ in India.
+            © 2026 Swaft X. Built by Samrat. Compare rides, save money.
           </p>
           <div className="flex gap-6 text-sm text-muted-foreground">
+            <Link to="/about" className="hover:text-foreground transition-colors">About</Link>
             <a href="#" className="hover:text-foreground transition-colors">Privacy</a>
             <a href="#" className="hover:text-foreground transition-colors">Terms</a>
-            <a href="#" className="hover:text-foreground transition-colors">Support</a>
           </div>
         </div>
       </div>
