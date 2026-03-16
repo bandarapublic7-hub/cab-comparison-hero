@@ -1,10 +1,12 @@
-import { Car, Bike, Leaf } from "lucide-react";
+import { Car, Bike, Leaf, ExternalLink } from "lucide-react";
 import { EvaluatedRide, VehicleType } from "@/lib/jabalpur";
+import { getBookingLink, hasBookingLink, DeepLinkParams } from "@/lib/deeplinks";
 
 interface RideCardProps {
   ride: EvaluatedRide;
   isBest: boolean;
   rank: number;
+  deepLinkParams?: DeepLinkParams;
 }
 
 const vehicleIcons: Record<VehicleType, React.ReactNode> = {
@@ -19,7 +21,7 @@ const vehicleColors: Record<VehicleType, string> = {
   bike: "bg-emerald-500/20 text-emerald-400",
 };
 
-const RideCard = ({ ride, isBest, rank }: RideCardProps) => (
+const RideCard = ({ ride, isBest, rank, deepLinkParams }: RideCardProps) => (
   <div className={`flex items-center justify-between p-4 rounded-xl transition-all ${
     isBest
       ? "bg-primary/10 border border-primary/30 ring-1 ring-primary/20"
@@ -47,7 +49,7 @@ const RideCard = ({ ride, isBest, rank }: RideCardProps) => (
         </div>
       </div>
     </div>
-    <div className="text-right shrink-0 ml-3">
+      <div className="text-right shrink-0 ml-3 flex flex-col items-end gap-1">
       <div className={`font-display text-lg font-bold ${isBest ? "text-primary" : "text-foreground"}`}>
         ₹{ride.adjusted_price}
       </div>
@@ -55,6 +57,16 @@ const RideCard = ({ ride, isBest, rank }: RideCardProps) => (
         <div className="text-xs text-muted-foreground line-through">₹{ride.original_price}</div>
       )}
       <div className="text-[10px] text-muted-foreground">Score: {ride.score}</div>
+      {deepLinkParams && hasBookingLink(ride.provider) && (
+        <a
+          href={getBookingLink(ride.provider, deepLinkParams) || "#"}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-1 text-[11px] px-2.5 py-1 rounded-full bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity mt-0.5"
+        >
+          Book <ExternalLink className="h-3 w-3" />
+        </a>
+      )}
     </div>
   </div>
 );
