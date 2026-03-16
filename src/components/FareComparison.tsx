@@ -189,22 +189,23 @@ const FareComparison = () => {
                           ₹{ride.price}
                         </div>
                         {pickup && drop && hasBookingLink(ride.service) && (
-                          <a
-                            href={getBookingLink(ride.service, {
-                              pickupLat: pickup.lat,
-                              pickupLng: pickup.lng,
-                              dropLat: drop.lat,
-                              dropLng: drop.lng,
-                              pickupName: pickup.name,
-                              dropName: drop.name,
-                            }) || "#"}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={(e) => e.stopPropagation()}
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              const link = getBookingLink(ride.service, {
+                                pickupLat: pickup.lat,
+                                pickupLng: pickup.lng,
+                                dropLat: drop.lat,
+                                dropLng: drop.lng,
+                                pickupName: pickup.name,
+                                dropName: drop.name,
+                              });
+                              if (link) window.open(link, "_blank", "noopener,noreferrer");
+                            }}
                             className="flex items-center gap-1 text-[11px] px-2.5 py-1 rounded-full bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity"
                           >
                             Book <ExternalLink className="h-3 w-3" />
-                          </a>
+                          </button>
                         )}
                       </div>
                     </motion.div>

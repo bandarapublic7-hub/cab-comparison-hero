@@ -58,14 +58,15 @@ const RideCard = ({ ride, isBest, rank, deepLinkParams }: RideCardProps) => (
       )}
       <div className="text-[10px] text-muted-foreground">Score: {ride.score}</div>
       {deepLinkParams && hasBookingLink(ride.provider) && (
-        <a
-          href={getBookingLink(ride.provider, deepLinkParams) || "#"}
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          onClick={() => {
+            const link = getBookingLink(ride.provider, deepLinkParams);
+            if (link) window.open(link, "_blank", "noopener,noreferrer");
+          }}
           className="flex items-center gap-1 text-[11px] px-2.5 py-1 rounded-full bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity mt-0.5"
         >
           Book <ExternalLink className="h-3 w-3" />
-        </a>
+        </button>
       )}
     </div>
   </div>
