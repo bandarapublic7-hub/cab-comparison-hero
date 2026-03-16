@@ -1,8 +1,9 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useMemo } from "react";
-import { Bike, Car, TrendingDown, Search, ArrowDownUp } from "lucide-react";
+import { Bike, Car, TrendingDown, Search, ArrowDownUp, ExternalLink } from "lucide-react";
 import LocationInput from "@/components/LocationInput";
 import { Location, calculateFares, getDistance } from "@/lib/locations";
+import { getBookingLink, hasBookingLink } from "@/lib/deeplinks";
 
 type RideType = "auto" | "bike" | "cab";
 
