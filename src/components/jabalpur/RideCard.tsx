@@ -1,5 +1,6 @@
-import { Car, Bike, Leaf } from "lucide-react";
+import { Car, Bike, Leaf, ExternalLink } from "lucide-react";
 import { EvaluatedRide, VehicleType } from "@/lib/jabalpur";
+import { getBookingLink, hasBookingLink, DeepLinkParams } from "@/lib/deeplinks";
 
 interface RideCardProps {
   ride: EvaluatedRide;
