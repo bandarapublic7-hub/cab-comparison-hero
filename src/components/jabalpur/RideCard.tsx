@@ -49,7 +49,7 @@ const RideCard = ({ ride, isBest, rank, deepLinkParams }: RideCardProps) => (
         </div>
       </div>
     </div>
-    <div className="text-right shrink-0 ml-3">
+      <div className="text-right shrink-0 ml-3 flex flex-col items-end gap-1">
       <div className={`font-display text-lg font-bold ${isBest ? "text-primary" : "text-foreground"}`}>
         ₹{ride.adjusted_price}
       </div>
@@ -57,6 +57,16 @@ const RideCard = ({ ride, isBest, rank, deepLinkParams }: RideCardProps) => (
         <div className="text-xs text-muted-foreground line-through">₹{ride.original_price}</div>
       )}
       <div className="text-[10px] text-muted-foreground">Score: {ride.score}</div>
+      {deepLinkParams && hasBookingLink(ride.provider) && (
+        <a
+          href={getBookingLink(ride.provider, deepLinkParams) || "#"}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-1 text-[11px] px-2.5 py-1 rounded-full bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity mt-0.5"
+        >
+          Book <ExternalLink className="h-3 w-3" />
+        </a>
+      )}
     </div>
   </div>
 );

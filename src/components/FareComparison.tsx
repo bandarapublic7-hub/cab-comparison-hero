@@ -180,7 +180,7 @@ const FareComparison = () => {
                           <div className="text-xs text-muted-foreground">{ride.eta} away</div>
                         </div>
                       </div>
-                      <div className="text-right">
+                      <div className="text-right flex flex-col items-end gap-1">
                         <div
                           className={`font-display text-lg font-bold ${
                             i === 0 ? "text-primary" : "text-foreground"
@@ -188,6 +188,24 @@ const FareComparison = () => {
                         >
                           ₹{ride.price}
                         </div>
+                        {pickup && drop && hasBookingLink(ride.service) && (
+                          <a
+                            href={getBookingLink(ride.service, {
+                              pickupLat: pickup.lat,
+                              pickupLng: pickup.lng,
+                              dropLat: drop.lat,
+                              dropLng: drop.lng,
+                              pickupName: pickup.name,
+                              dropName: drop.name,
+                            }) || "#"}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="flex items-center gap-1 text-[11px] px-2.5 py-1 rounded-full bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity"
+                          >
+                            Book <ExternalLink className="h-3 w-3" />
+                          </a>
+                        )}
                       </div>
                     </motion.div>
                   ))}
