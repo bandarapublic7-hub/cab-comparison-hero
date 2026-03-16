@@ -212,6 +212,14 @@ const JabalpurRides = () => {
                       ride={ride}
                       isBest={ride.provider === result.best_ride}
                       rank={(page - 1) * ITEMS_PER_PAGE + i + 1}
+                      deepLinkParams={pickup && drop ? {
+                        pickupLat: pickup.lat,
+                        pickupLng: pickup.lng,
+                        dropLat: drop.lat,
+                        dropLng: drop.lng,
+                        pickupName: pickup.name,
+                        dropName: drop.name,
+                      } : undefined}
                     />
                   </motion.div>
                 ))}
