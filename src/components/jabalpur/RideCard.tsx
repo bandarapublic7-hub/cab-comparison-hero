@@ -21,7 +21,7 @@ const vehicleColors: Record<VehicleType, string> = {
   bike: "bg-emerald-500/20 text-emerald-400",
 };
 
-const RideCard = ({ ride, isBest, rank }: RideCardProps) => (
+const RideCard = ({ ride, isBest, rank, deepLinkParams }: RideCardProps) => (
   <div className={`flex items-center justify-between p-4 rounded-xl transition-all ${
     isBest
       ? "bg-primary/10 border border-primary/30 ring-1 ring-primary/20"
