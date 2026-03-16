@@ -6,6 +6,7 @@ interface RideCardProps {
   ride: EvaluatedRide;
   isBest: boolean;
   rank: number;
+  deepLinkParams?: DeepLinkParams;
 }
 
 const vehicleIcons: Record<VehicleType, React.ReactNode> = {
